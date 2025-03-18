@@ -23,15 +23,11 @@ RUN mkdir -p /var/run/sshd
 RUN echo 'otpuser ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/otpuser
 
 # Enable Google Authenticator in PAM
-RUN sed -i '2i auth required pam_google_authenticator.so' /etc/pam.d/sshd && \
-    sed -i '/password-auth/s/^/# /' /etc/pam.d/sshd
-#    sed -i '2i auth required pam_google_authenticator.so nullok' /etc/pam.d/password-auth
+COPY google-authenticator/etc/pam.d/sshd /etc/pam.d/sshd
 
-# Configure SSH to use keyboard-interactive authentication for OTP
-RUN sed -i 's/^ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/' /etc/ssh/sshd_config.d/50-redhat.conf && \
-    sed -i 's/^#KbdInteractiveAuthentication.*/KbdInteractiveAuthentication yes/' /etc/ssh/sshd_config && \
-    sed -i 's/^#PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config && \
-    echo "AuthenticationMethods keyboard-interactive" >> /etc/ssh/sshd_config
+# Configure SSH for OTP
+COPY google-authenticator/etc/ssh/sshd_config /etc/ssh/sshd_config
+COPY google-authenticator/etc/ssh/sshd_config.d/50-redhat.conf /etc/ssh/sshd_config.d/50-redhat.conf
 
 # Expose SSH port
 EXPOSE 22
