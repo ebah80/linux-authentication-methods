@@ -12,9 +12,9 @@ google-authenticator.dockerfile       | OTP             | -               | pass
 google-authenticator-password.dockerfile  | OTP             | -               | Password      | 
 google-authenticator-sshkey.dockerfile    | OTP             | SSH-KEY         | Password      |
 google-authenticator-full.dockerfile      | OTP             | -               | OTP           |
-yubiko.dockerfile                         | Yubiko          | Password        | -             |
-yubiko-sshkey.dockerfile                  | Yubiko          | SSH-KEY         | -             |
-yubiko-full.dockerfile                    | Yubiko          | -               | Yubiko        |
+yubikey.dockerfile                         | yubikey          | Password        | -             |
+yubikey-sshkey.dockerfile                  | yubikey          | SSH-KEY         | -             |
+yubikey-full.dockerfile                    | yubikey          | -               | yubikey        |
 
 ## password-authentication.dockerfile
 ```
@@ -109,11 +109,11 @@ docker kill google-authenticator-full-container
 # /usr/sbin/sshd -D -e
 ```
 
-## Yubiko + password
+## Yubikey + password
 ... work in progress ...
 
-## Yubiko + ssh-key
+## Yubikey + ssh-key
 ... work in progress ...
 
-## Yubiko authentication +  Yubiko authorization (sudo)
+## Yubikey authentication +  Yubikey authorization (sudo)
 ... work in progress ...
