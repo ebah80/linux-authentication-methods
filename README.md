@@ -1,6 +1,4 @@
 # Linux authentication methods
-Password authentication alternatives:
-
 
 
 Dockerfile                                | Authentication1 | Authentication2 | sudo |
