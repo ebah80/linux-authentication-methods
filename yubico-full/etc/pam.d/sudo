@@ -1,0 +1,4 @@
+#%PAM-1.0
+auth required pam_yubico.so id=16 debug authfile=/etc/yubico/authorized_yubikeys
+account include system-auth
+session include system-auth

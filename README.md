@@ -12,7 +12,7 @@ google-authenticator-sshkey.dockerfile    | OTP             | SSH-KEY         | 
 google-authenticator-full.dockerfile      | OTP             | -               | OTP           |
 yubikey.dockerfile                         | yubikey          | Password        | -             |
 yubikey-sshkey.dockerfile                  | yubikey          | SSH-KEY         | -             |
-yubikey-full.dockerfile                    | yubikey          | -               | yubikey        |
+yubico-full.dockerfile                    | yubikey          | -               | yubikey        |
 
 ## password-authentication.dockerfile
 ```
