@@ -8,7 +8,6 @@ RUN dnf install epel-release -y && \
     openssh-server \
     google-authenticator \
     passwd \
-    nano \
     sudo &&\
     dnf clean all &&\
     ssh-keygen -A
